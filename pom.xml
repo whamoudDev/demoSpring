@@ -76,8 +76,47 @@
         </dependency>
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <adresse_serveur_bdd>localhost:3306</adresse_serveur_bdd>
+                <nom_bdd>bddSpringTest</nom_bdd>
+                <utilisateur_bdd>root</utilisateur_bdd>
+                <mot_de_passe_bdd></mot_de_passe_bdd>
+                <ddl_auto>create</ddl_auto>
+                <nom_fichier_sql>mysql</nom_fichier_sql>
+                <initialisation_donnee_bdd>true</initialisation_donnee_bdd>
+                <mode_initialisation_donnee_bdd>always</mode_initialisation_donnee_bdd>
+                <dossier_upload>D:\\\\InfoMNS\\Cda\\Java\\WorkspaceIntellij\\demo\\uploads</dossier_upload>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <adresse_serveur_bdd>172.18.0.2:3306</adresse_serveur_bdd>
+                <nom_bdd>bddSpringTest</nom_bdd>
+                <utilisateur_bdd>root</utilisateur_bdd>
+                <mot_de_passe_bdd>coucou</mot_de_passe_bdd>
+                <ddl_auto>none</ddl_auto>
+                <nom_fichier_sql></nom_fichier_sql>
+                <initialisation_donnee_bdd>false</initialisation_donnee_bdd>
+                <mode_initialisation_donnee_bdd>never</mode_initialisation_donnee_bdd>
+                <dossier_upload>/uploads</dossier_upload>
+            </properties>
+        </profile>
+    </profiles>
 
     <build>
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
