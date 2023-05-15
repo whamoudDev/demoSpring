@@ -103,13 +103,13 @@
                 <adresse_serveur_bdd>172.18.0.2:3306</adresse_serveur_bdd>
                 <nom_bdd>bddSpringTest</nom_bdd>
                 <utilisateur_bdd>root</utilisateur_bdd>
-                <mot_de_passe_bdd>coucou</mot_de_passe_bdd>
+                <mot_de_passe_bdd>Info à définir dans le fichier .m2/settings.xml du serveur</mot_de_passe_bdd>
                 <ddl_auto>none</ddl_auto>
                 <nom_fichier_sql></nom_fichier_sql>
                 <initialisation_donnee_bdd>false</initialisation_donnee_bdd>
                 <mode_initialisation_donnee_bdd>never</mode_initialisation_donnee_bdd>
                 <dossier_upload>/uploads</dossier_upload>
-                <jwt_secret>azerty</jwt_secret>
+                <jwt_secret>Info à définir dans le fichier .m2/settings.xml du serveur</jwt_secret>
             </properties>
         </profile>
     </profiles>
