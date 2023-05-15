@@ -71,9 +71,9 @@ public class ConfigurationSecurite extends WebSecurityConfigurerAdapter {
         http.cors().and()
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/admin/**").hasRole("ADMIN")
-                .antMatchers("/connexion", "/inscription", "/utilisateur-par-pays/**").permitAll()
-                .antMatchers("/**").hasAnyRole("ADMIN", "USER");
+                .antMatchers("/admin/**").hasAnyRole("ADMIN", "SUPERADMIN")
+                .antMatchers("/connexion", "/inscription", "/").permitAll()
+                .antMatchers("/**").hasAnyRole("ADMIN", "USER", "SUPERADMIN");
 
         http.addFilterBefore(filtre, UsernamePasswordAuthenticationFilter.class);
     }

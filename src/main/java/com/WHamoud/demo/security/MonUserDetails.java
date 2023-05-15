@@ -1,10 +1,12 @@
 package com.WHamoud.demo.security;
 
+import com.WHamoud.demo.model.Role;
 import com.WHamoud.demo.model.Utilisateur;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -28,11 +30,13 @@ public class MonUserDetails implements UserDetails {
 
         //return List.of(new SimpleGrantedAuthority(utilisateur.isAdmin() ? "ROLE_ADMINISTRATEUR" : "ROLE_UTILISATEUR"));
 
-        return List.of(new SimpleGrantedAuthority(utilisateur.getRole().getNom()));
-
-
+//        return List.of(new SimpleGrantedAuthority(utilisateur.getRole().getNom()));
+        List<GrantedAuthority> authorities = new ArrayList<>();
+        for (Role role : utilisateur.getRoles()) {
+            authorities.add(new SimpleGrantedAuthority(role.getNom()));
+        }
+return authorities;
     }
-
     @Override
     public String getPassword() {
         return utilisateur.getPassword();

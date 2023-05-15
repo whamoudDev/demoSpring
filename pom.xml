@@ -18,6 +18,7 @@
 
     <properties>
         <java.version>11</java.version>
+        <skipUnitTest>false</skipUnitTest>
     </properties>
     <dependencies>
         <dependency>
@@ -91,7 +92,8 @@
                 <nom_fichier_sql>mysql</nom_fichier_sql>
                 <initialisation_donnee_bdd>true</initialisation_donnee_bdd>
                 <mode_initialisation_donnee_bdd>always</mode_initialisation_donnee_bdd>
-                <dossier_upload>D:\\\\InfoMNS\\Cda\\Java\\WorkspaceIntellij\\demo\\uploads</dossier_upload>
+                <dossier_upload>A changer dans le fichier C:\User\.m2\settings.xml</dossier_upload>
+                <jwt_secret>azerty</jwt_secret>
             </properties>
         </profile>
         <profile>
@@ -106,6 +108,7 @@
                 <initialisation_donnee_bdd>false</initialisation_donnee_bdd>
                 <mode_initialisation_donnee_bdd>never</mode_initialisation_donnee_bdd>
                 <dossier_upload>/uploads</dossier_upload>
+                <jwt_secret>azerty</jwt_secret>
             </properties>
         </profile>
     </profiles>
@@ -127,7 +130,7 @@
                 <artifactId >maven-surefire-plugin</artifactId>
                 <version>3.0.0-M6</version>
                 <configuration>
-                    <skipTests>true</skipTests>
+                    <skipTests>${skipUnitTest}</skipTests>
                 </configuration>
             </plugin>
             <plugin>

@@ -1,6 +1,6 @@
 
 INSERT INTO `pays` (`id`, `nom`) VALUES
-(1, 'France'),
+(1, 'Luxembourg'),
 (2, 'Algérie'),
 (3, 'Russie'),
 (4, 'Chine');
