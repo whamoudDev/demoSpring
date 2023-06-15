@@ -16,4 +16,4 @@ docker stop demospring
 docker rm demospring
 
 # Lancer un nouveau conteneur
-docker run -d --net backend --ip 172.18.0.4 --name=demospring -p 8080:8080 demospring
+docker run -d --net backend --ip 172.18.0.4 --name=demospring -p 8080:8080 -v uploaded_files:/upload demospring
