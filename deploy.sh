@@ -5,6 +5,7 @@ git pull
 
 # Construire le projet avec Maven
 bash mvnw package -P prod,sysadmin --settings /home/debian/.m2/settings.xml
+# Si cela ne fonctionne pas  sudo bash mvnw --settings /home/debian/.m2/settings.xml package -Pprod -Psysadmin
 
 # Construire l'image Docker
 docker build --no-cache -t demospring .
